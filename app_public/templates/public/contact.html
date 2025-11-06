@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Campus Connect | Contact</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'public/favicon.ico' %}"
+    />
+    <link rel="stylesheet" href="{% static 'public/css/general.css' %}" />
+    <link rel="stylesheet" href="{% static 'public/css/contact.css' %}" />
+  </head>
+  <body>
+    {% include 'public/include/navbar.html' %}
+    <header>
+      <h1>Contact Campus Connect</h1>
+    </header>
+    <main>
+      <section>
+        <h2>Get in Touch</h2>
+        <p>
+          If you have any questions or feedback, feel free to reach out to us at
+          <a href="mailto:info@campusconnect.com">info@campusconnect.com</a>.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

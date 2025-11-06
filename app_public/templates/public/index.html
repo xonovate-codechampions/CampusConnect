@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Campus Connect</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'public/favicon.ico' %}"
+    />
+    <link rel="stylesheet" href="{% static 'public/css/general.css' %}" />
+    <link rel="stylesheet" href="{% static 'public/css/home.css' %}" />
+  </head>
+  <body>
+    {% include 'public/include/navbar.html' %}
+    <header>
+      <h1>Welcome to Campus Connect</h1>
+    </header>
+    <main>
+      <section>
+        <h2>About Us</h2>
+        <p>
+          Campus Connect is a platform for students to connect and collaborate.
+        </p>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 Campus Connect</p>
+    </footer>
+  </body>
+</html>
