@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main .card {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 10px;
+  flex: 1 1 300px;
+  box-sizing: border-box;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 0 !important;
+  margin: 0 !important;
+  text-align: center;
+}
+
+.features h2, .features h5 {
+  text-align: center;
+}
+
+.hero h1 {
+  color: #00447c;
+  font-weight: 700;
+}
+
+.hero p.lead {
+  font-size: 18px;
+  color: #555;
+}
+
+.hero .cta a {
+  margin: 10px;
+}
+
+section {
+  margin-top: 80px;
+}
+
+section h2 {
+  color: #00447c;
+  margin-bottom: 15px;
+}
+
+section h5 {
+  color: #f27d16;
+  margin-bottom: 20px;
+}
+
+.features .cards {
+  gap: 20px;
+}
+
+.features .card {
+  flex: 1 1 300px;
+  border: none;
+  background-color: var(--background-color);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.features .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.features .card h3 {
+  color: #00447c;
+}
+
+.joinus {
+  background-color: #fff1e4;
+  border-radius: 15px;
+  padding: 60px 30px;
+}
+
+.joinus h2 {
+  color: #00447c;
+}
+
+.joinus h5 {
+  color: #f27d16;
+}
+
+.joinus p {
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+footer {
+  background-color: #00447c;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+}
+
+footer p {
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .features .card {
+    flex: 1 1 100%;
+  }
+}
