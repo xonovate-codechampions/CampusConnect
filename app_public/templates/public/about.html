@@ -18,34 +18,94 @@
     />
 
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-9ndCyUa1z3p0y2QpC6f1o1lKQz5l9z1g3p1p6l9g6p1p6l9g6p1p6l9g6p1p6l9g"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="{% static 'public/css/general.css' %}" />
     <link rel="stylesheet" href="{% static 'public/css/about.css' %}" />
   </head>
   <body>
-    {% include 'public/include/navbar.html' %}
     <header>
-      <h1>About Campus Connect</h1>
+          {% include 'public/include/navbar.html' %}
+
+      
     </header>
     <main>
-      <section>
-        <h2>Our Mission</h2>
-        <p>
-          Campus Connect aims to foster collaboration and connection among
-          students through a user-friendly platform.
-        </p>
+      <section class="hero">
+<h1>About Campus Connect</h1>
+<p>
+Our goal is to help students interact, share knowledge, and find opportunities that encourage growth and creativity — one connection at a time.
+</p>
       </section>
-      <section>
-        <h2>Our Team</h2>
-        <p>
-          We are a group of passionate developers and educators dedicated to
-          enhancing the student experience.
-        </p>
-      </section>
+
+      <div class="container">
+
+</section>
+
+
+<section class="section" id="journey">
+<h2>Our Journey</h2>
+<h3>From an idea to a platform for change.</h3>
+<p>
+CampusConnect began as a discussion among students — a dream to make learning more engaging and inclusive. What started as a class project quickly turned into a living platform, shaped by teamwork, late nights, and shared vision.
+</p>
+<p>
+Through this journey, we’ve learned that technology isn’t just about coding — it’s about people. It’s about creating something that connects hearts and minds across campuses.
+</p>
+</section>
+
+
+<section class="section" id="mission-vision">
+<h2>Our Purpose</h2>
+<h3>Why we exist and what we aim to achieve.</h3>
+<p><strong>Mission:</strong> To empower university students through technology, collaboration, and shared experiences — helping them learn, connect, and create together.</p>
+<p><strong>Vision:</strong> A connected student community where ideas, creativity, and opportunities flow freely across universities, empowering young people to build the future together.</p>
+</section>
+
+
+<section class="section" id="impact">
+<h2>Our Impact</h2>
+<h3>A growing network of changemakers.</h3>
+<p>
+CampusConnect helps students discover opportunities, meet people who inspire them, and develop leadership and communication skills through engagement. It encourages active learning and cross-campus participation, strengthening the bridge between education and real-world collaboration.
+</p>
+</section>
+
+
+<section class="section" id="values">
+<h2>Our Core Values</h2>
+<h3>The principles that drive us every day.</h3>
+<ul>
+<li><strong>Collaboration:</strong> Building together, learning together.</li>
+<li><strong>Innovation:</strong> Using creativity and technology to solve real problems.</li>
+<li><strong>Community:</strong> Fostering connection, support, and inclusion.</li>
+<li><strong>Growth:</strong> Encouraging learning, leadership, and shared success.</li>
+<li><strong>Integrity:</strong> Working with purpose, honesty, and respect.</li>
+</ul>
+</section>
+
+
+<section class="section" id="team">
+<h2>Who We Are</h2>
+<h3>The faces behind CampusConnect.</h3>
+<p>
+We are students from the Xonovate Code Champions Apprenticeship 2025 Cohort, supported by mentors, educators, and peers who believe in learning by doing. Each of us contributes unique skills — from design and coding to storytelling and leadership — all united by one goal: connecting students across campuses.
+</p>
+</section>
+
+
+<section class="section" id="future">
+<h2>The Future of CampusConnect</h2>
+<h3>Expanding opportunities and inspiring growth.</h3>
+<p>
+As CampusConnect grows, we aim to introduce more interactive features — from student marketplaces and discussion boards to mentorship programmes and university directories. Our dream is to see every student feel part of a connected academic world where learning never stops.
+</p>
+</section>
+
+
+</div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{% static 'public/js/main.js' %}"></script>

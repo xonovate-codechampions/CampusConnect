@@ -9,9 +9,12 @@
     <link
       rel="icon"
       type="image/x-icon"
-      href="{% static 'public/favicon.ico' %}"
+      href="{% static 'images/favicon.ico' %}"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -24,9 +27,10 @@
     <link rel="stylesheet" href="{% static 'public/css/home.css' %}" />
   </head>
   <body>
-    <header class="px-5">{% include 'public/include/navbar.html' %}</header>
-    <main class="container">
-      <section class="hero text-center" >
+    <header class="px-5">
+      {% include 'public/include/navbar.html' %}
+
+      <section class="hero text-center" id="hero">
         <h1 class="display-3">Welcome to Campus Connect</h1>
         <p class="lead">
           The home of collaboration, innovation, and connection for students
@@ -49,7 +53,8 @@
           >
         </div>
       </section>
-
+    </header>
+    <main class="container">
       <section class="whatwestandfor my-5">
         <h2>What We Stand For</h2>
 
@@ -93,58 +98,55 @@
         </p>
       </section>
       <section class="features my-5">
-      <h2>Why Students Love CampusConnect</h2>
+        <h2>Why Students Love CampusConnect</h2>
 
-      <h5>Designed for students who believe in community</h5>
-      <div class="cards d-flex flex-wrap justify-content-between">
-        <div class="card">
-          <h3>Connect Beyond Boundaries:</h3>
-          <p>
-            Meet students from different universities and expand your network
-            globally.
-          </p>
+        <h5>Designed for students who believe in community</h5>
+        <div class="cards d-flex flex-wrap justify-content-between">
+          <div class="card">
+            <h3>Connect Beyond Boundaries:</h3>
+            <p>
+              Meet students from different universities and expand your network
+              globally.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Collaborate and Learn:</h3>
+            <p>
+              Work together on research, projects, and ideas that spark change.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Stay Informed:</h3>
+            <p>
+              Get updates on campus events, programs, scholarships, and
+              opportunities.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Grow Personally and Professionally:</h3>
+            <p>
+              Build relationships, gain exposure, and develop leadership skills
+              through real collaboration.
+            </p>
+          </div>
         </div>
-        <div class="card">
-          <h3>Collaborate and Learn:</h3>
-          <p>
-            Work together on research, projects, and ideas that spark change.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Stay Informed:</h3>
-          <p>
-            Get updates on campus events, programs, scholarships, and
-            opportunities.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Grow Personally and Professionally:</h3>
-          <p>
-            Build relationships, gain exposure, and develop leadership skills
-            through real collaboration.
-          </p>
-        </div>
-      </div>
-    </section>
-    <section class="joinus my-5 text-center">
-      <h2>Ready to Join the Movement?</h2>
-      <h5> Learn. Connect. Grow</h5>
+      </section>
+      <section class="joinus my-5 text-center">
+        <h2>Ready to Join the Movement?</h2>
+        <h5>Learn. Connect. Grow</h5>
 
-      <p>
-        Campus Connect is more than a website — it’s a movement for collaboration, learning, and empowerment.
-        Join us and be part of a new generation of students shaping the future of education and technology.
-      </p>
-      <a href="{% url 'accounts:register' %}" class="btn btn-primary btn-lg"
-        >Get started</a
->
-      >
+        <p>
+          Campus Connect is more than a website — it’s a movement for
+          collaboration, learning, and empowerment. Join us and be part of a new
+          generation of students shaping the future of education and technology.
+        </p>
+        <a href="{% url 'accounts:register' %}" class="btn btn-primary btn-lg"
+          >Get started</a
+        >
+      </section>
     </main>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    >
-      </script
-          <script src="{% static 'public/js/main.js' %}">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'public/js/main.js' %}"></script>
     <footer>
       <p>&copy; 2025 Campus Connect</p>
     </footer>
