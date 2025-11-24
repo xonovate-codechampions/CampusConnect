@@ -9,12 +9,13 @@
     <link
       rel="icon"
       type="image/x-icon"
-      href="{% static 'public/favicon.ico' %}"
+      href="{% static 'images/favicon.ico' %}"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -31,13 +32,73 @@
       <h1>Contact Campus Connect</h1>
     </header>
     <main>
-      <section>
-        <h2>Get in Touch</h2>
-        <p>
-          If you have any questions or feedback, feel free to reach out to us at
-          <a href="mailto:info@campusconnect.com">info@campusconnect.com</a>.
-        </p>
-      </section>
+      <section class="contact-hero">
+  <div class="container">
+    <h1>Get in Touch</h1>
+    <p class="subheading">We’d love to hear from you!</p>
+    <p class="body-text">
+      Have questions, ideas, or collaboration proposals? Whether you’re a student, mentor, or partner, 
+      the CampusConnect team welcomes your feedback and participation. Together, we can make this 
+      platform better and stronger.
+    </p>
+  </div>
+</section>
+
+<section class="contact-form-section">
+  <div class="container">
+    <h2>Send Us a Message</h2>
+    <p class="subheading">We’re here to listen and collaborate.</p>
+
+    <form class="contact-form">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter your full name" required>
+      </div>
+
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-group">
+        <label>Subject</label>
+        <input type="text" placeholder="Message subject" required>
+      </div>
+
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Write your message here..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">Send Message</button>
+      <p class="success-message">Thank you for reaching out! We’ll get back to you soon.</p>
+    </form>
+
+    <p class="body-text">
+      Use this form to share your thoughts, feature ideas, or even your experience using CampusConnect. 
+      Every message helps us improve and grow the platform.
+    </p>
+  </div>
+</section>
+
+<section class="direct-contact">
+  <div class="container">
+    <h2>Reach Us Directly</h2>
+    <p class="subheading">Contact our team or visit our repository.</p>
+
+    <ul class="contact-details">
+      <li><strong>Email:</strong> info@campusconnect.com</li>
+      <li><strong>GitHub:</strong> xonovate-codechampions/CampusConnect</li>
+      <li><strong>Programme:</strong> Xonovate Code Champions Apprenticeship 2025 Cohort</li>
+    </ul>
+
+    <p class="body-text">
+      For partnership, mentorship, or learning-related inquiries, feel free to contact us directly. 
+      We believe in open collaboration and shared growth.
+    </p>
+  </div>
+</section>
+
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{% static 'public/js/main.js' %}"></script>

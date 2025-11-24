@@ -14,26 +14,33 @@ main .card {
   box-sizing: border-box;
 }
 
+.introduction {
+  display: flex;
+  flex: 1 1 300px;
+  margin: auto;
+}
+
 #hero {
-  background-color:#E8F3FF;
+  background-color: #e8f3ff;
   height: 100vh;
-  width:100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   justify-content: center;
-  padding: 5px !important;
-  margin: 0 !important;
+  padding:  5px !important;
+  /* margin: 0 !important; */
 }
 
-.features h2, .features h5 {
+.features h2,
+.features h5 {
   text-align: center;
 }
 
 .hero h1 {
   color: #00447c;
-  font-weight: 700;
+  font-weight: bolder;
 }
 
 .hero p.lead {

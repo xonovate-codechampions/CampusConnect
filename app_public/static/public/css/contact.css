@@ -1,0 +1,116 @@
+/* GENERAL STRUCTURE */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 50px 0;
+  font-family: "Poppins", sans-serif;
+}
+
+h1, h2 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.subheading {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.body-text {
+  color: #444;
+  line-height: 1.7;
+  margin-top: 15px;
+}
+
+/* HERO SECTION */
+.contact-hero {
+  background: #f5f9ff;
+  padding: 80px 0;
+  text-align: center;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+/* FORM SECTION */
+.contact-form-section {
+  background: #ffffff;
+}
+
+.contact-form {
+  background: #f8faff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.07);
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+  border-color: #3c6ff7;
+}
+
+textarea {
+  min-height: 150px;
+}
+
+/* BUTTON */
+.btn-submit {
+  background: #3c6ff7;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.btn-submit:hover {
+  background: #345be2;
+}
+
+/* SUCCESS MESSAGE */
+.success-message {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #2b8a3e;
+  display: none; /* shown after form is submitted */
+}
+
+/* DIRECT CONTACT SECTION */
+.direct-contact {
+  background: #f5f9ff;
+  padding: 60px 0;
+}
+
+.contact-details {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.contact-details li {
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+}
