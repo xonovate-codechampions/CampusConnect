@@ -1,50 +1,115 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="{% static 'images/favicon.ico' %}" />
-    <title>Campus Connect | Login</title>
-    <link rel="stylesheet" href="{% static 'accounts/css/styles.css' %}" />
-   
-  </head>
-  <body>
-    <div class="initial">
-      <h1>Login</h1>
-      <form>
-        <div>
-          <label for="firstname-input">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"/></svg>
-      
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusConnect - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-background: #FFF8F0;
+            --color-accent: #F2994A;
+            --color-button: #F27D16;
+            --color-text: #333333;
+            --color-link: #0A5DA6;
+        }
+        
+        body {
+            background-color: var(--color-background);
+            font-family: 'Poppins', sans-serif;
+            color: var(--color-text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-          </label>
-          <input type="text" name="firstname" id="firstname-input" placeholder="Firstname">
-        </div>
-          <div>
-            <label for="email-input">
-              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M120-200q-24.75 0-42.375-17.625T60-260v-440q0-24.75 17.625-42.375T120-760h720q24.75 0 42.375 17.625T900-700v440q0 24.75-17.625 42.375T840-200H120Zm0-60h720v-340L480-460 120-600v340Zm360-140L180-700h600L480-400Z"/></svg>
-          <input type="email" name="email" id="email-input" placeholder="Email">
-        </div>
-        <div>
-          <label for="password-input">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm240-200q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80Z"/></svg>
-          </label>
-  
-          <input type="password" name="password" id="password-input" placeholder="Password">
-          <div>
-          <label for="confirm-input">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm240-200q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80Z"/></svg>
-          <input type="password" name="confirm-password" id="confirm-input" placeholder="Confirm Password">
-          <button type="submit">Login</button>
-      </form>
-      <p>Don't have an account? <a href="{% url 'accounts:register' %}">Register here</a></p>
+        .btn-primary {
+            background-color: var(--color-button);
+            color: white;
+            transition: background-color 0.2s;
+        }
+        .btn-primary:hover {
+            background-color: var(--color-accent);
+        }
+        .link-text {
+            color: var(--color-link);
+            transition: color 0.2s;
+        }
+        .link-text:hover {
+            color: #084988;
+        }
+        .input-focus:focus {
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px rgba(242, 125, 22, 0.4);
+        }
+    </style>
+</head>
+<body>
 
+    <div class="w-full max-w-md bg-white p-8 md:p-10 rounded-xl shadow-2xl border-t-4 border-[--color-accent]">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-extrabold text-[--color-text] mb-2">Welcome Back!</h1>
+            <p class="text-gray-500">Sign in to CampusConnect</p>
+        </div>
+
+        <form id="loginForm" method="POST">
+            {% csrf_token %}
+            <div class="mb-5">
+                <label for="email" class="block text-sm font-medium mb-1 text-[--color-text]">Email Address</label>
+                <input type="email" id="email" name="email" required 
+                       class="w-full p-3 border border-gray-300 rounded-lg input-focus focus:outline-none"
+                       placeholder="you@university.edu">
+            </div>
+
+            <div class="mb-5">
+                <label for="password" class="block text-sm font-medium mb-1 text-[--color-text]">Password</label>
+                <input type="password" id="password" name="password" required 
+                       class="w-full p-3 border border-gray-300 rounded-lg input-focus focus:outline-none"
+                       placeholder="••••••••">
+            </div>
+
+            <div class="text-right mb-6">
+                <a href="#" class="text-sm font-medium link-text hover:underline">Forgot Password?</a>
+            </div>
+
+            <button type="submit" id="loginBtn"
+                    class="btn-primary w-full py-3 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform transition duration-300 ease-in-out hover:scale-[1.01]">
+                Log In
+            </button>
+        </form>
+
+        <div id="messageBox" class="mt-6 p-4 rounded-lg text-sm hidden" style="background-color: var(--color-accent); color: white;"></div>
+
+        <div class="mt-8 text-center text-sm">
+            Don't have an account? 
+            <a href="register.html" class="font-semibold link-text hover:underline">Register Now</a>
+        </div>
     </div>
 
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const msgBox = document.getElementById('messageBox');
+            const btn = document.getElementById('loginBtn');
 
-    
-  </body>
-  
+            msgBox.classList.remove('hidden');
+
+            if (email && password) {
+                msgBox.style.backgroundColor = 'var(--color-button)';
+                msgBox.textContent = 'Login successful! Redirecting...';
+                btn.textContent = 'Logged In!';
+            } else {
+                msgBox.style.backgroundColor = 'var(--color-accent)';
+                msgBox.textContent = 'Please fill in all fields.';
+            }
+        });
+    </script>
+</body>
 </html>
