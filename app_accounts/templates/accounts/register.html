@@ -1,13 +1,158 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Campus Connect | Register</title>
-  </head>
-  <body>
-    <h1>Register Page</h1>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusConnect - Register</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Poppins font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Define custom colors and font based on the provided theme */
+        :root {
+            --color-background: #FFF8F0; /* Warm off-white */
+            --color-accent: #F2994A;     /* Light orange */
+            --color-button: #F27D16;     /* Deep orange */
+            --color-text: #333333;       /* Neutral dark */
+            --color-link: #0A5DA6;       /* Muted calm blue */
+        }
+        
+        body {
+            background-color: var(--color-background);
+            font-family: 'Poppins', sans-serif;
+            color: var(--color-text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Applying the button color using a custom utility */
+        .btn-primary {
+            background-color: var(--color-button);
+            color: white;
+            transition: background-color 0.2s;
+        }
+        .btn-primary:hover {
+            background-color: var(--color-accent);
+        }
+        .link-text {
+            color: var(--color-link);
+            transition: color 0.2s;
+        }
+        .link-text:hover {
+            color: #084988; /* Slightly darker blue on hover */
+        }
+        .input-focus:focus {
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px rgba(242, 125, 22, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Register Container Card -->
+    <div class="w-full max-w-md bg-white p-8 md:p-10 rounded-xl shadow-2xl border-t-4 border-[--color-accent]">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-extrabold text-[--color-text] mb-2">Join CampusConnect</h1>
+            <p class="text-gray-500">Create your new student account</p>
+        </div>
+
+        <form id="registerForm">
+            <!-- Full Name Field -->
+            <div class="mb-5">
+                <label for="fullName" class="block text-sm font-medium mb-1 text-[--color-text]">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required 
+                       class="w-full p-3 border border-gray-300 rounded-lg input-focus focus:outline-none"
+                       placeholder="Jane Doe">
+            </div>
+
+            <!-- Email Field -->
+            <div class="mb-5">
+                <label for="email" class="block text-sm font-medium mb-1 text-[--color-text]">Email Address</label>
+                <input type="email" id="email" name="email" required 
+                       class="w-full p-3 border border-gray-300 rounded-lg input-focus focus:outline-none"
+                       placeholder="you@university.edu">
+            </div>
+
+            <!-- Password Field -->
+            <div class="mb-5">
+                <label for="password" class="block text-sm font-medium mb-1 text-[--color-text]">Password</label>
+                <input type="password" id="password" name="password" required 
+                       class="w-full p-3 border border-gray-300 rounded-lg input-focus focus:outline-none"
+                       placeholder="At least 8 characters">
+            </div>
+
+            <!-- Confirm Password Field -->
+            <div class="mb-6">
+                <label for="confirmPassword" class="block text-sm font-medium mb-1 text-[--color-text]">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required 
+                       class="w-full p-3 border border-gray-300 rounded-lg input-focus focus:outline-none"
+                       placeholder="Confirm your password">
+            </div>
+
+            <!-- Register Button -->
+            <button type="submit" id="registerBtn"
+                    class="btn-primary w-full py-3 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform transition duration-300 ease-in-out hover:scale-[1.01]">
+                Register Account
+            </button>
+        </form>
+
+        <!-- Message Box (Alert substitute) -->
+        <div id="messageBox" class="mt-6 p-4 rounded-lg text-sm hidden" style="background-color: var(--color-button); color: white;">
+            Processing registration...
+        </div>
+
+        <!-- Login Link -->
+        <div class="mt-8 text-center text-sm">
+            Already have an account? 
+            <a href="login.html" class="font-semibold link-text hover:underline">Log In Here</a>
+        </div>
+
+    </div>
+
+    <script>
+        const form = document.getElementById('registerForm');
+        const messageBox = document.getElementById('messageBox');
+        const registerBtn = document.getElementById('registerBtn');
+
+        // Function to handle form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Stop the default form submission
+
+            // Simple form validation check
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const fullName = document.getElementById('fullName').value;
+
+            if (password !== confirmPassword) {
+                messageBox.classList.remove('hidden');
+                messageBox.style.backgroundColor = 'var(--color-accent)'; // Use accent for error
+                messageBox.innerHTML = 'Passwords do not match. Please check again.';
+                return;
+            }
+            
+            if (fullName && password === confirmPassword) {
+                // Display the custom message box (instead of alert)
+                messageBox.classList.remove('hidden');
+                messageBox.style.backgroundColor = 'var(--color-button)';
+                messageBox.innerHTML = '🎉 Registration successful! Welcome, ' + fullName + '!';
+                registerBtn.textContent = 'Account Created!';
+
+                // Simulate an API call delay (optional)
+                setTimeout(() => {
+                    // You would typically redirect the user here
+                    // window.location.href = 'login.html';
+                }, 2000);
+
+            } else {
+                messageBox.classList.remove('hidden');
+                messageBox.style.backgroundColor = 'var(--color-accent)';
+                messageBox.innerHTML = 'Please fill in all required fields.';
+            }
+        });
+    </script>
+</body>
 </html>
