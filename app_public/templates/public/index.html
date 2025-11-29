@@ -1,155 +1,76 @@
 {% load static %}
 
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Welcome to Campus Connect</title>
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="{% static 'images/favicon.ico' %}"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <link rel="icon" href="{% static 'public/favicon.ico' %}" />
+    <title>Campus Connect</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="{% static 'public/css/general.css' %}" />
     <link rel="stylesheet" href="{% static 'public/css/home.css' %}" />
   </head>
-  <body>
+  <body >
     <header>
       {% include 'public/include/navbar.html' %}
-
-      <section id="hero">
-        <h1>Welcome to Campus Connect</h1>
-        <p class="lead">
-          The home of collaboration, innovation, and connection for students
-          across campuses.
-        </p>
-        <p>
-          Campus Connect is more than a platform — it’s a community built by
-          students, for students. A digital space where ideas grow,
-          opportunities are shared, and meaningful connections are made. Whether
-          you’re a student leader, an innovator, or simply curious about what
-          others are doing, Campus Connect brings university life together under
-          one roof.
-        </p>
-        <div class="cta">
-          <a href="{% url 'about' %}" class="btn btn-secondary btn-lg"
-            >Learn More</a
-          >
-          <a href="{% url 'accounts:register' %}" class="btn btn-primary btn-lg"
-            >Join Now</a
-          >
-        </div>
-      </section>
     </header>
-    <main class="container">
-      <section class="whatwestandfor my-5">
-        <h2>What We Stand For</h2>
-
-        <h5>Uniting students beyond the walls of their universities</h5>
-        <p>
-          Campus Connect was created to empower every student — from every
-          background and every university — to connect, collaborate, and create
-          together. The platform helps you share your journey, showcase your
-          talent, and discover opportunities that align with your interests and
-          aspirations.
-        </p>
-
-        <p>
-          Our purpose is simple: to make higher education more interactive,
-          supportive, and connected. Through Campus Connect, students can find
-          mentorship, learn from peers, and celebrate achievements that matter.
-        </p>
-      </section>
-      <section class="howitworks my-5">
-        <h2>How Campus Connect Works</h2>
-
-        <h5>Three steps to connect, collaborate, and grow</h5>
-        <ul>
-          <li>
-            <strong>Sign Up:</strong> Create a student profile using your
-            university email and select your institution.
-          </li>
-          <li>
-            <strong>Explore:</strong> Discover news, discussions, opportunities,
-            and student-led initiatives from across campuses.
-          </li>
-          <li>
-            <strong>Engage:</strong> Join conversations, participate in
-            projects, or post your own ideas and events.
-          </li>
-        </ul>
-        <p>
-          It’s that simple — no barriers, no limits. Campus Connect opens doors
-          for students to learn from one another and experience the spirit of
-          collaboration in real time.
-        </p>
+    <main >
+      <section id="hero" class="pt-8 pb-12 text-center px-4">
+        <h1 class="text-4xl font-bold">Welcome to Campus Connect</h1>
+        <p class="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">The home of collaboration, innovation, and connection for students across campuses.</p>
+        <div class="flex justify-center gap-4 mt-6">
+          <a href="/about/" class="bg-white text-gray-800 border border-gray-300 rounded-xl px-5 py-3 text-lg hover:bg-gray-100">Learn More</a>
+          <a href="/accounts/register/" class="bg-[#f27d16] hover:bg-[#e06912] text-white font-semibold py-3 px-6 rounded-xl shadow">Join Now</a>
+        </div>
       </section>
 
-      <section class="features my-5">
-        <h2>Why Students Love CampusConnect</h2>
+      <section class="whatwestandfor my-8">
+        <h2 class="text-2xl font-semibold">What We Stand For</h2>
+        <h5 class="mt-2 text-gray-700">Uniting students beyond the walls of their universities</h5>
+        <p class="mt-4 text-gray-600">Campus Connect was created to empower every student — from every background and every university — to connect, collaborate, and create together. The platform helps you share your journey, showcase your talent, and discover opportunities that align with your interests and aspirations.</p>
+        <p class="mt-4 text-gray-600">Our purpose is simple: to make higher education more interactive, supportive, and connected. Through Campus Connect, students can find mentorship, learn from peers, and celebrate achievements that matter.</p>
+      </section>
 
-        <h5>Designed for students who believe in community</h5>
-        <div class="cards d-flex flex-wrap justify-content-between">
-          <div class="card">
-            <h3>Connect Beyond Boundaries:</h3>
-            <p>
-              Meet students from different universities and expand your network
-              globally.
-            </p>
+      <section class="features my-8">
+        <h2 class="text-2xl font-semibold">Why Students Love CampusConnect</h2>
+        <h5 class="mt-2 text-gray-700">Designed for students who believe in community</h5>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h3 class="text-lg font-semibold">Connect Beyond Boundaries</h3>
+            <p class="mt-2 text-sm text-gray-700">Meet students from different universities and expand your network globally.</p>
           </div>
-          <div class="card">
-            <h3>Collaborate and Learn:</h3>
-            <p>
-              Work together on research, projects, and ideas that spark change.
-            </p>
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h3 class="text-lg font-semibold">Collaborate and Learn</h3>
+            <p class="mt-2 text-sm text-gray-700">Work together on research, projects, and ideas that spark change.</p>
           </div>
-          <div class="card">
-            <h3>Stay Informed:</h3>
-            <p>
-              Get updates on campus events, programs, scholarships, and
-              opportunities.
-            </p>
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h3 class="text-lg font-semibold">Stay Informed</h3>
+            <p class="mt-2 text-sm text-gray-700">Get updates on campus events, programs, scholarships, and opportunities.</p>
           </div>
-          <div class="card">
-            <h3>Grow Personally and Professionally:</h3>
-            <p>
-              Build relationships, gain exposure, and develop leadership skills
-              through real collaboration.
-            </p>
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h3 class="text-lg font-semibold">Grow Personally and Professionally</h3>
+            <p class="mt-2 text-sm text-gray-700">Build relationships, gain exposure, and develop leadership skills through real collaboration.</p>
           </div>
         </div>
       </section>
-      <section class="joinus my-5 text-center">
-        <h2>Ready to Join the Movement?</h2>
-        <h5>Learn. Connect. Grow</h5>
 
-        <p>
-          Campus Connect is more than a website — it’s a movement for
-          collaboration, learning, and empowerment. Join us and be part of a new
-          generation of students shaping the future of education and technology.
-        </p>
-        <a href="{% url 'accounts:register' %}" class="btn btn-primary btn-lg"
-          >Get started</a
-        >
+      <section class="joinus my-8 text-center">
+        <h2 class="text-2xl font-semibold">Ready to Join the Movement?</h2>
+        <h5 class="mt-2 text-gray-700">Learn. Connect. Grow</h5>
+        <p class="mt-4 text-gray-600">Campus Connect is more than a website — it’s a movement for collaboration, learning, and empowerment. Join us and be part of a new generation of students shaping the future of education and technology.</p>
+        <a href="/accounts/register/" class="mt-4 inline-block bg-[#f27d16] hover:bg-[#e06912] text-white font-semibold py-3 px-6 rounded-xl shadow">Get started</a>
       </section>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{% static 'public/js/main.js' %}"></script>
-    <footer>
+    <footer class="mt-12 text-center text-sm text-gray-600">
       <p>&copy; 2025 Campus Connect</p>
+    </footer>
+    <script src="{% static 'public/js/main.js' %}"></script>
+  </body>
+</html>
     </footer>
   </body>
 </html>

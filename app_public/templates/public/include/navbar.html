@@ -1,31 +1,82 @@
 {% load static %}
 
-<nav class="navbar navbar-expand-lg bg-light fixed-top mb-5" id="navbar">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="{% url 'home' %}"
-      ><img class="logo" alt="logo" src="{% static 'images/icon.png' %}"
-    /></a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNavAltMarkup"
-      aria-controls="navbarNavAltMarkup"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav ms-auto">
-        <a class="nav-link active" aria-current="page" href="{% url 'home' %}"
+<nav class="fixed top-0 left-0 right-0 bg-white z-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex items-center justify-between h-16">
+      <div class="flex items-center">
+        <a href="/" class="text-xl font-semibold"
+          ><img
+            src="{% static 'images/icon.png' %}"
+            alt="Campus Connect Logo"
+            class="h-8"
+        /></a>
+      </div>
+      <div class="hidden md:flex space-x-6">
+        <a
+          href="{% static 'index.html' %}"
+          class="navlinks"
           >Home</a
         >
-        <a class="nav-link" href="{% url 'about' %}">About</a>
-        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-        <a class="nav-link" href="{% url 'accounts:login' %}">Login</a>
-        <a class="nav-link" href="{% url 'accounts:register' %}">Join Now</a>
+        <a
+          href="{% static 'about.html' %}"
+          class="navlinks"
+          >About</a
+        >
+        <a
+          href="{% static 'contact.html' %}"
+          class="navlinks"
+          >Contact</a
+        >
+        <a
+          href="{% static 'login.html' %}"
+          class="navlinks"
+          >Login</a
+        >
+        <a
+          href="{% static 'register.html' %}"
+          class="navlinks"
+          >Register</a
+        >
       </div>
+      <div class="md:hidden">
+        <button
+          id="nav-toggle"
+          class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        >
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="nav-menu" class="md:hidden hidden py-2">
+      <a href="/" class="block px-2 py-2 text-gray-700 hover:bg-gray-100"
+        >Home</a
+      >
+      <a href="/about/" class="block px-2 py-2 text-gray-700 hover:bg-gray-100"
+        >About</a
+      >
+      <a
+        href="/contact/"
+        class="block px-2 py-2 text-gray-700 hover:bg-gray-100"
+        >Contact</a
+      >
+      <a
+        href="/accounts/login/"
+        class="block px-2 py-2 text-gray-700 hover:bg-gray-100"
+        >Login</a
+      >
     </div>
   </div>
 </nav>

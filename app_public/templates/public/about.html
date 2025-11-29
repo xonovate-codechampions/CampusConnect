@@ -6,6 +6,81 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Campus Connect | About</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{% static 'public/css/general.css' %}" />
+    <link rel="stylesheet" href="{% static 'public/css/about.css' %}" />
+  </head>
+  <body class="antialiased bg-gray-50 text-gray-900">
+    <header>
+      {% include 'public/include/navbar.html' %}
+    </header>
+    <main class="max-w-5xl mx-auto px-4 pt-24">
+      <section class="hero text-center">
+        <h1 class="text-3xl font-bold">About Campus Connect</h1>
+        <p class="mt-4 text-gray-700">Our goal is to help students interact, share knowledge, and find opportunities that encourage growth and creativity — one connection at a time.</p>
+      </section>
+
+      <section id="journey" class="mt-8">
+        <h2 class="text-2xl font-semibold">Our Journey</h2>
+        <h3 class="mt-2 text-lg">From an idea to a platform for change.</h3>
+        <p class="mt-4 text-gray-600">CampusConnect began as a discussion among students — a dream to make learning more engaging and inclusive. What started as a class project quickly turned into a living platform, shaped by teamwork, late nights, and shared vision.</p>
+        <p class="mt-2 text-gray-600">Through this journey, we’ve learned that technology isn’t just about coding — it’s about people. It’s about creating something that connects hearts and minds across campuses.</p>
+      </section>
+
+      <section id="mission-vision" class="mt-8">
+        <h2 class="text-2xl font-semibold">Our Purpose</h2>
+        <h3 class="mt-2 text-lg">Why we exist and what we aim to achieve.</h3>
+        <p class="mt-2 text-gray-700"><strong>Mission:</strong> To empower university students through technology, collaboration, and shared experiences — helping them learn, connect, and create together.</p>
+        <p class="mt-2 text-gray-700"><strong>Vision:</strong> A connected student community where ideas, creativity, and opportunities flow freely across universities, empowering young people to build the future together.</p>
+      </section>
+
+      <section id="impact" class="mt-8">
+        <h2 class="text-2xl font-semibold">Our Impact</h2>
+        <h3 class="mt-2 text-lg">A growing network of changemakers.</h3>
+        <p class="mt-2 text-gray-600">CampusConnect helps students discover opportunities, meet people who inspire them, and develop leadership and communication skills through engagement. It encourages active learning and cross-campus participation, strengthening the bridge between education and real-world collaboration.</p>
+      </section>
+
+      <section id="values" class="mt-8">
+        <h2 class="text-2xl font-semibold">Our Core Values</h2>
+        <h3 class="mt-2 text-lg">The principles that drive us every day.</h3>
+        <ul class="mt-3 list-disc list-inside text-gray-700">
+          <li><strong>Collaboration:</strong> Building together, learning together.</li>
+          <li><strong>Innovation:</strong> Using creativity and technology to solve real problems.</li>
+          <li><strong>Community:</strong> Fostering connection, support, and inclusion.</li>
+          <li><strong>Growth:</strong> Encouraging learning, leadership, and shared success.</li>
+          <li><strong>Integrity:</strong> Working with purpose, honesty, and respect.</li>
+        </ul>
+      </section>
+
+      <section id="team" class="mt-8">
+        <h2 class="text-2xl font-semibold">Who We Are</h2>
+        <h3 class="mt-2 text-lg">The faces behind CampusConnect.</h3>
+        <p class="mt-2 text-gray-700">We are students from the Xonovate Code Champions Apprenticeship 2025 Cohort, supported by mentors, educators, and peers who believe in learning by doing. Each of us contributes unique skills — from design and coding to storytelling and leadership — all united by one goal: connecting students across campuses.</p>
+      </section>
+
+      <section id="future" class="mt-8 mb-12">
+        <h2 class="text-2xl font-semibold">The Future of CampusConnect</h2>
+        <h3 class="mt-2 text-lg">Expanding opportunities and inspiring growth.</h3>
+        <p class="mt-2 text-gray-600">As CampusConnect grows, we aim to introduce more interactive features — from student marketplaces and discussion boards to mentorship programmes and university directories. Our dream is to see every student feel part of a connected academic world where learning never stops.</p>
+      </section>
+
+    </main>
+    <footer class="mt-12 text-center text-sm text-gray-600">
+      <p>&copy; 2025 Campus Connect</p>
+    </footer>
+    <script src="{% static 'public/js/main.js' %}"></script>
+  </body>
+</html>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Campus Connect | About</title>
     <link
       rel="icon"
       type="image/x-icon"
