@@ -13,103 +13,94 @@
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      {% load static %}
+      rel="stylesheet"
+    />
+    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
 
-      <!DOCTYPE html>
-      <html lang="en">
-        <head>
-          <meta charset="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <title>Campus Connect | Contact</title>
-          <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}" />
-          <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-          <script src="https://cdn.tailwindcss.com"></script>
-          <link rel="stylesheet" href="{% static 'public/css/general.css' %}" />
-          <link rel="stylesheet" href="{% static 'public/css/contact.css' %}" />
-        </head>
-        <body class="bg-gray-50 text-gray-900">
-          <header>
-            {% include 'public/include/navbar.html' %}
-          </header>
+    <link rel="stylesheet" href="{% static 'public/css/general.css' %}" />
+    <link rel="stylesheet" href="{% static 'public/css/contact.css' %}" />
+  </head>
+  <body>
+    {% include 'public/include/navbar.html' %}
+    <header>
+      <h1>Contact Campus Connect</h1>
+    </header>
+    <main>
+      <section class="contact-hero">
+  <div class="container">
+    <h1>Get in Touch</h1>
+    <p class="subheading">We’d love to hear from you!</p>
+    <p class="body-text">
+      Have questions, ideas, or collaboration proposals? Whether you’re a student, mentor, or partner, 
+      the CampusConnect team welcomes your feedback and participation. Together, we can make this 
+      platform better and stronger.
+    </p>
+  </div>
+</section>
 
-          <main class="max-w-3xl mx-auto px-4 pt-24">
-            <h1 class="text-3xl font-bold">Contact Us</h1>
-            <p class="mt-2 text-gray-700">We'd love to hear from you. Whether you have questions, feedback, or ideas, reach out and we'll get back to you soon.</p>
+<section class="contact-form-section">
+  <div class="container">
+    <h2>Send Us a Message</h2>
+    <p class="subheading">We’re here to listen and collaborate.</p>
 
-            <div id="success-message" class="hidden mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800" role="status" tabindex="-1">
-              Thank you for contacting us. We will get back to you shortly.
-            </div>
+    <form class="contact-form">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter your full name" required>
+      </div>
 
-            <form id="contactForm" class="mt-6 space-y-4">
-              <div>
-                <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-                <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
-              </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="Enter your email" required>
+      </div>
 
-              <div>
-                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
-              </div>
+      <div class="form-group">
+        <label>Subject</label>
+        <input type="text" placeholder="Message subject" required>
+      </div>
 
-              <div>
-                <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-                <textarea id="message" name="message" rows="5" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"></textarea>
-              </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Write your message here..." required></textarea>
+      </div>
 
-              <div>
-                <button type="submit" class="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">Send Message</button>
-              </div>
-            </form>
-          </main>
+      <button type="submit" class="btn-submit">Send Message</button>
+      <p class="success-message">Thank you for reaching out! We’ll get back to you soon.</p>
+    </form>
 
-          <script src="{% static 'public/js/contact.js' %}"></script>
-          <script src="{% static 'public/js/main.js' %}"></script>
-        </body>
-      </html>
-            </section>
-          </form>
+    <p class="body-text">
+      Use this form to share your thoughts, feature ideas, or even your experience using CampusConnect. 
+      Every message helps us improve and grow the platform.
+    </p>
+  </div>
+</section>
 
-          <p class="mt-6 text-gray-600">Use this form to share your thoughts, feature ideas, or even your experience using CampusConnect. Every message helps us improve and grow the platform.</p>
-        </div>
-      </section>
+<section class="direct-contact">
+  <div class="container">
+    <h2>Reach Us Directly</h2>
+    <p class="subheading">Contact our team or visit our repository.</p>
 
-      <section class="direct-contact">
-        <div class="container">
-          <h2>Reach Us Directly</h2>
-          <p class="subheading">Contact our team or visit our repository.</p>
+    <ul class="contact-details">
+      <li><strong>Email:</strong> info@campusconnect.com</li>
+      <li><strong>GitHub:</strong> xonovate-codechampions/CampusConnect</li>
+      <li><strong>Programme:</strong> Xonovate Code Champions Apprenticeship 2025 Cohort</li>
+    </ul>
 
-          <ul class="contact-details">
-            <li>
-              <strong>Email:</strong>
-              <a href="mailto:info@campusconnect.com">info@campusconnect.com</a>
-            </li>
-            <li>
-              <strong>GitHub:</strong>
-              <a
-                href="https://github.com/xonovate-codechampions/CampusConnect"
-                target="_blank"
-                rel="noopener noreferrer"
-                >xonovate-codechampions/CampusConnect</a
-              >
-            </li>
-            <li>
-              <strong>Programme:</strong> Xonovate Code Champions Apprenticeship
-              2025 Cohort
-            </li>
-          </ul>
+    <p class="body-text">
+      For partnership, mentorship, or learning-related inquiries, feel free to contact us directly. 
+      We believe in open collaboration and shared growth.
+    </p>
+  </div>
+</section>
 
-          <p class="body-text">
-            For partnership, mentorship, or learning-related inquiries, feel
-            free to contact us directly. We believe in open collaboration and
-            shared growth.
-          </p>
-        </div>
-      </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{% static 'public/js/main.js' %}"></script>
-    <script src="{% static 'public/js/contact.js' %}"></script>
-    <footer>
-      <p>&copy; 2025 Campus Connect</p>
-    </footer>
   </body>
 </html>
