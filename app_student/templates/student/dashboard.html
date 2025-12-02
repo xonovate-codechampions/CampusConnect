@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Dashboard - Final Version</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f5f7;
+        overflow-x: hidden;
+      }
+
+      /* ====== LAYOUT ====== */
+      .dashboard {
+        display: flex;
+        min-height: 100vh;
+      }
+
+      /* ====== SIDEBAR ====== */
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        background-color: #1e293b;
+        color: #fff;
+        width: 240px;
+        transition: width 0.3s ease, left 0.3s ease;
+        z-index: 1001;
+        display: flex;
+        flex-direction: column; /* Stack logo + nav list */
+      }
+
+      .sidebar.collapsed {
+        width: 60px;
+      }
+
+      .sidebar .logo {
+        padding: 1rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: #1e293b;
+        flex-shrink: 0;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+
+      .sidebar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex: 1; /* take remaining height */
+        overflow-y: auto; /* only items scroll */
+      }
+
+      .sidebar ul li {
+        padding: 0.8rem 1rem;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      .sidebar ul li:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .sidebar ul li i {
+        margin-right: 10px;
+        font-size: 18px;
+      }
+
+      .sidebar.collapsed ul li span {
+        display: none;
+      }
+
+      .sidebar ul::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .sidebar ul::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+      }
+
+      /* ====== MAIN CONTENT ====== */
+      .main-content {
+        flex: 1;
+        background: #fff;
+        transition: margin-left 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        margin-left: 240px; /* space for sidebar */
+      }
+
+      .sidebar.collapsed + .main-content {
+        margin-left: 60px;
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #ffffff;
+        border-bottom: 1px solid #ddd;
+        padding: 0.8rem 1.5rem;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .toggle-btn {
+        font-size: 22px;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      .content {
+        padding: 1.5rem;
+      }
+
+      /* ====== OVERLAY ====== */
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 1000;
+        display: none;
+      }
+
+      .overlay.active {
+        display: block;
+      }
+
+      /* ====== RESPONSIVE ====== */
+      @media (max-width: 768px) {
+        .sidebar {
+          left: -240px;
+          width: 240px;
+        }
+
+        .sidebar.show {
+          left: 0;
+        }
+
+        .main-content {
+          margin-left: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="dashboard">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <div class="logo">MyApp</div>
+        <ul>
+          <li><i>🏠</i><span>Dashboard</span></li>
+          <li><i>📁</i><span>Projects</span></li>
+          <li><i>👥</i><span>Users</span></li>
+          <li><i>📊</i><span>Reports</span></li>
+          <li><i>⚙️</i><span>Settings</span></li>
+          <li><i>📞</i><span>Contact</span></li>
+          <li><i>💬</i><span>Messages</span></li>
+          <li><i>🧾</i><span>Invoices</span></li>
+          <li><i>📦</i><span>Products</span></li>
+          <li><i>🕒</i><span>History</span></li>
+          <li><i>👤</i><span>Profile</span></li>
+          <li><i>🗂️</i><span>Documents</span></li>
+          <li><i>🚪</i><span>Logout</span></li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <header class="header">
+          <button id="toggleSidebar" class="toggle-btn">☰</button>
+          <h3>Dashboard Header</h3>
+        </header>
+
+        <section class="content">
+          <h2>Welcome!</h2>
+          <p>Scroll down to test sidebar behaviour and responsiveness.</p>
+
+          <p>Resize the window or click ☰ to see the behaviour:</p>
+          <ul>
+            <li>
+              On large screens: sidebar collapses/expands (pushes content)
+            </li>
+            <li>On small screens: sidebar overlays; click outside to close</li>
+            <li>Sidebar items scroll independently when overflowed</li>
+          </ul>
+
+          <h3 style="margin-top: 2rem">Main Content Simulation</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+            condimentum, turpis quis convallis interdum, nisl turpis aliquam
+            turpis, at bibendum leo elit ac dolor. Integer vel turpis ut nunc
+            tincidunt gravida non sit amet arcu.
+          </p>
+
+          <!-- Generate tall content to make scrolling visible -->
+          <div
+            style="
+              height: 2000px;
+              background: linear-gradient(#fff, #ddd);
+              margin-top: 1rem;
+            "
+          >
+            <p style="padding: 1rem">
+              Scroll down to test scrolling behaviour.
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" class="overlay"></div>
+
+    <script>
+      const sidebar = document.getElementById("sidebar");
+      const toggleBtn = document.getElementById("toggleSidebar");
+      const overlay = document.getElementById("overlay");
+
+      function openSidebar() {
+        sidebar.classList.add("show");
+        overlay.classList.add("active");
+      }
+
+      function closeSidebar() {
+        sidebar.classList.remove("show");
+        overlay.classList.remove("active");
+      }
+
+      toggleBtn.addEventListener("click", () => {
+        if (window.innerWidth > 768) {
+          sidebar.classList.toggle("collapsed");
+        } else {
+          if (sidebar.classList.contains("show")) {
+            closeSidebar();
+          } else {
+            openSidebar();
+          }
+        }
+      });
+
+      overlay.addEventListener("click", closeSidebar);
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) {
+          closeSidebar();
+        } else {
+          sidebar.classList.remove("collapsed");
+        }
+      });
+    </script>
+  </body>
+</html>
