@@ -108,19 +108,7 @@ section h5 {
   margin: 20px auto;
 }
 
-footer {
-  background-color: #00447c;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  margin-top: 50px;
-  font-size: 10px;
-  letter-spacing: 0.5px;
-}
 
-footer p {
-  margin: auto;
-}
 
 @media (max-width: 768px) {
   .features .card {
